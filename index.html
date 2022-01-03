@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <title>Vijay</title>
+   <style>
+     .body {
+	background: url(images/hero.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+}
+.class{
+  margin-top: 10px;
+}
+
+   </style>
+</head>
+   
+<body class="body">
+  <h1 style="margin-bottom: 40px; margin-top: 40px; color: rgb(165, 50, 50);">
+    <marquee><i>Welcome to my Area</i></marquee></h1>
+  <div style="margin-left: auto; margin-right: auto; width: 50%; margin-top: 100px; margin-left: 5rem; " class="form ">
+   
+    <form name="login" >
+   <h3 style="color:coral"> Username</h3>
+   <input class="class" type="text" name="userid" placeholder="Your name with capitals">
+   <h3 style="margin-top:30px; flood-color: rgb(122, 65, 82);">Password</h3> 
+   <input class="class" type="password" name="pswrd">
+    <div style="margin-top: 30px;">
+      <input type="button"  style="color: rgb(77, 127, 173); background-color: lightsteelblue;" onclick="check(this.form)" value="Login"/>
+      <input type="reset" style="margin-left: 10px; background-color: rgb(7, 8, 8); color: red;" value="Cancel"/>
+    </div>
+    
+    </form>
+  </div>
+
+
+<script language="javascript">
+function check(form)/*function to check userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are matching*/
+ if(form.userid.value == "ALEKHYA NAIDU" && form.pswrd.value == "Naidu478")
+  {
+    window.open('next.html')
+  }
+ else
+ {
+   alert("Error Password or Username")/*displays error message*/
+  }
+}
+</script>
+</body>
+</html>

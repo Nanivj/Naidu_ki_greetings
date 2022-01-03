@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <title>Welcome</title>
+  <style>
+     body{
+    background: url(images/background.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 12px;
+      }
+ .body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.birthday-gift {
+  position: relative;
+}
+
+.birthday-gift:before {
+  content:"";
+  position: absolute;
+  width: 170px;
+  height:20px;
+  border-radius:50%;
+  background-color: rgba(0,0,0,0.4);
+  top:90px;
+  left:-10px;
+}
+
+input#click {
+  display: none;
+}
+
+.gift {
+  position: relative;
+  width: 150px;
+  height: 100px;
+  background-color: #e9c46a;
+}
+
+.gift:before {
+  content:"";
+  position: absolute;
+  width: 25px;
+  height: 100px;
+  background-color: #e76f51;
+  left:62px;
+}
+
+.gift:after {
+  content:"";
+  position: absolute;
+  box-shadow: inset 0 10px rgba(0,0,0,0.3);
+  width: 150px;
+  height: 100px;
+}
+
+.click {
+  position: absolute;
+  background-color: #e9c46a;
+  width: 170px;
+  height: 40px;
+  top:-40px;
+  left:-10px;
+  transform-origin: bottom left;
+  transition: .3s;
+  cursor: pointer;
+  
+}
+
+.click:before {
+  content:"";
+  position: absolute;
+  width: 25px;
+  height: 40px;
+  background-color: #e76f51;
+  left:69px;
+}
+
+.click:after {
+  content:"";
+  position: absolute;
+  width: 5px;
+  height: 0;
+  border-bottom: 30px solid #e76f51;
+  border-top: 30px solid #e76f51;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  transform: rotate(-90deg);
+  left:65px;
+  top:-47px;
+}
+
+#click:checked + .click {
+  transform: rotate(-110deg) scaleX(0.85);
+}
+
+.wishes {
+  position: absolute;
+  transition: .5s;
+  color: #333;
+  font-size: 37px;
+  text-align: center;
+  z-index:-1;
+  left:5px;
+  
+}
+
+#click:checked ~ .wishes {
+  transform: translateY(-100px);
+}
+
+#click:checked ~ .sparkles {
+  display: inline;
+}
+
+
+
+.sparkles {
+  position: absolute;
+  display: none;
+  top:-15px;
+  z-index:-2;
+  left:40px;
+}
+
+.spark1, .spark2, .spark3, .spark4, .spark5, .spark6 {
+  position: absolute;
+  background-color: #fee440;
+  border-radius:50%;
+  top:-9px;
+  z-index:-1;
+}
+
+.spark1 {
+  width: 8px;
+  height:8px;
+  left:30px;
+  top:-9px;
+  animation: fire 0.9s ease-in-out infinite, color 0.4s linear infinite;
+}
+
+.spark1:before {
+  content:"";
+  position: absolute;
+  width:5px;
+  height:5px;
+  top:8px;
+  left:11px;
+  background-color: #fee440;
+  border-radius:50%;
+}
+
+.spark2 {
+  width: 9px;
+  height:9px;
+  left:33px;
+  top:-5px;
+  animation: fire2 0.28s ease-in-out infinite, color 0.4s linear infinite;
+}
+
+.spark2:before {
+  content:"";
+  position: absolute;
+  width:5px;
+  height:5px;
+  top:12px;
+  left:3px;
+  background-color: #fee440;
+  border-radius:50%;
+}
+
+.spark3 {
+  width: 8.5px;
+  height:8.5px;
+  left:33px;
+  top:-5px;
+  animation: fire3 0.36s ease-in-out infinite, color2 0.4s linear infinite;
+}
+
+.spark3:before {
+  content:"";
+  position: absolute;
+  width:5px;
+  height:5px;
+  top:12px;
+  left:-1px;
+  background-color: #fee440;
+  border-radius:50%;
+}
+
+.spark4 {
+  width: 7px;
+  height:7px;
+  left:27px;
+  top:-5px;
+  animation: fire2 0.24s ease-in-out infinite, color2 0.2s linear infinite;
+}
+
+.spark5 {
+  width: 7px;
+  height:7px;
+  left:29px;
+  top:-5px;
+  animation: fire3 0.45s ease-in-out infinite, color 0.2s linear infinite;
+}
+
+.spark6 {
+  width: 6px;
+  height:6px;
+  left:29px;
+  top:-5px;
+  animation: fire 0.35s ease-in-out infinite, color2 0.2s linear infinite;
+}
+  
+@keyframes fire3 {
+  100% { transform:translateX(20px) translateY(-93px); 
+         opacity: 0.3; }
+}
+
+@keyframes fire2 {
+  100% { transform:translateX(-5px) translateY(-90px); 
+         opacity: 0.3; }
+}
+
+@keyframes fire {
+  100% { transform:translateX(-25px) translateY(-95px); 
+         opacity: 0.3; }
+}
+
+@keyframes color {
+  from {background-color: #d00000;}
+  to {background-color: #0081a7;}
+}
+
+@keyframes color2 {
+  from {background-color: #8cff00;}
+  to {background-color: #1d2d44;}
+}
+.css-typing p {
+  border-right: .15em solid orange;
+  font-family: "Courier";
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.css-typing p:nth-child(1) {
+  width: 20.3em;
+  -webkit-animation: type 6s steps(60, entered);
+  animation: type 6s steps(60, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
+</style>
+
+</head>
+<body >
+    <h1 style="margin-top: 5px; color: lightseagreen;">
+        <marquee><i>WELCOME TOO U NAIDU <img style="margin-bottom: 0px;  margin-top: 0px;" src="images/eye-glass.png" alt="">....</i></marquee>
+    </h1>
+    <div class="css-typing p" style="margin-top: 20px; margin-left: 2px; color: rgb(206, 76, 24);">
+        <p>
+            Please click the top of the box...
+        </p>
+    </div>
+   <main class="body" style="margin-right: auto;margin-left:auto; margin-top: 20px; "> 
+    <div class="birthday-gift">
+        <div class="gift">
+        <input id='click' type='checkbox'>
+       
+        <label class='click' for='click'></label>
+     
+        <div class="wishes"></div>
+             <div class="sparkles">
+            <div class="spark1"></div>
+            <div class="spark2"></div>
+            <div class="spark3"></div>
+            <div class="spark4"></div>
+            <div class="spark5"></div>
+            <div class="spark6"></div>
+          </div>
+          </div>
+      </div>
+   </main>
+   
+    <script>
+      var submitbuttonelement = document.getElementById('click');
+      submitbuttonelement.addEventListener("click", function () {
+
+            window.open('surprise.html')
+        
+        })
+        
+    </script>
+</body>
+
+</html>
